@@ -1,0 +1,77 @@
+header {
+    background-color: #127b3b;
+    color: #d6d92e;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+h1 {
+    background-color: #1aac52;
+    height: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+body{
+    background-color: #164612;
+    color: #333;
+}
+button{
+    background-color: #343e00;
+    color: #d4ff00;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    
+}
+.Formularios{
+    text-align: center;
+    background-color:#347f51;
+    height: 300px;
+    width: 1100px;
+    border-radius: 20px;
+    margin-left: 45px;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+label{
+    color: #d6d92e;
+}
+footer {
+    background-color: #127b3b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    
+    bottom: 0;
+    width: 100%;
+}
+.hidden{
+    display: none;
+}
+#form-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #1f6219;
+    height: 260px;
+    border-radius: 50px;
+    border-color: #164612 ;
+    border: 2px solid #072a04;
+
+}
+h2{
+    color:#d6d92e;
+}
+form button{
+    background-color: #164612;
+    border-color: #164612;
+        border: 2px solid #072a04;
+}

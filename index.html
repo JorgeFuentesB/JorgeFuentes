@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxPass</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+    <header>
+    
+    <h1>Gestión de Tarjetas de Pago - MaxPas</h1>
+
+    <h2>Servicios / Consultas </h2>
+    <div class="servicios">
+        <button data-target="form-seleccionar-caja"> Elegir Caja </button>
+        <button data-target="form-registrar-tarjeta"> Registrar Tarjeta </button>
+        <button data-target="form-cargar-monto">Cargar Monto </button></a>
+        <button data-target="form-habilitar-tarjeta">Habilitar/Deshabilitar</button></a>
+        <button data-target="form-consultar-tarjetas-habilitadas-deshabilitadas">Tarjetas H/D</button>
+        <button data-target="form-consultar-tarjetas-fecha">Tarjetas H por fecha</button>
+        <button data-target="form-consultar-promedio-saldo-anterior">Monto Saldo anterior</button>
+        <button data-target="form-consultar-promedio-cargas">Monto de las cargas</button>
+        <button data-target="form-consultar-total-saldos-anteriores">Monto saldos anteriores</button>
+        <button data-target="form-consultar-total-cargas-habilitadas">Monto cargas tarjetas H</button>
+        <button data-target="form-consultar-total-cargas-deshabilitadas">Monto cargas tarjetas D</button>
+    
+    </div>
+    </header>
+    <main>
+        <section id = "form-section">
+            <div id = "form-seleccionar-caja-container" class="form-container">
+                <h2>Seleccionar Caja</h2>
+                <form id="form-seleccionar-caja" class="form">
+                    <label for="seleccionar-caja">Caja:</label>
+                    <select id="seleccionar-caja" name ="seleccionar-caja" required>
+                        <option value="1">Caja 1</option>
+                        <option value="2">Caja 2</option>
+                        <option value="3">Caja 3</option>
+                        <option value="4">Caja 4</option>
+                        <option value="5">Caja 5</option>
+                        <option value="6">Caja 6</option>
+                        <option value="7">Caja 7</option>
+                    </select>
+                    <button type="submit">Seleccionar Caja</button>
+                </form>
+            </div>
+        
+            <div id = "form-registrar-tarjeta-container" class= "form-container hidden">
+                <h2>Registrar Tarjeta</h2>
+                <form id ="form-registrar-tarjeta" class="form">
+                    <label for="numero-tarjeta-registrar">Número de Tarjeta:</label>
+                    <input type="text" id="numero-tarjeta-registrar" name="numero-tarjeta-registrar" required>
+                    <label for="fecha-tarjeta-registrar">Fecha :</label>
+                    <input type="date" id="fecha-tarjeta-registrar" name="fecha-tarjeta-registrar" required>
+                    <label for="numero-chip-tarjeta-registrar">Numero del chip: </label>
+                    <input type="text" id="numero-chip-tarjeta-registrar" name="numero-chip-tarjeta-registrar" required>
+                    <label for="saldo-anterior-registrar">Saldo anterior: </label>
+                    <input type="number" id="saldo-anterior-registrar" name="saldo-anterior-registrar" required>
+                    <label for="estado-registrar">Estado de la tarjeta: </label>
+                    <select id="estado-registrar" name="estado-registrar" required>
+                        <option value="habilitada">Habilitada</option>
+                        <option value="deshabilitada">Deshabilitada</option>
+                    </select>
+                    <button type="submit">Registrar Tarjeta</button>
+                </form>
+            </div>
+        
+        <div id="form-cargar-monto-container" class="form-container hidden">
+        <h2>Cargar montos a las tarjetas</h2>
+
+        <form id="form-cargar-monto" class ="form">
+            <label for="numero-tarjeta-cargar">Número de Tarjeta:</label>
+            <input type="text" id="numero-tarjeta-cargar" name="numero-tarjeta-cargar" required>
+        
+            <label for="monto-carga">Monto a Cargar:</label>
+            <input type="number" id="monto-carga" name="monto-carga" required>
+        
+            <button type="submit">Cargar Monto</button>
+        </form>
+        </div>
+        
+        <div id="form-habilitar-tarjeta-container" class="form-container hidden">
+        <h2>Habilitar/Deshabilitar Tarjeta de Pago</h2>
+        <form id = "form-habilitar-tarjeta" class="form ">
+            <label for="numero-habilitar-tarjeta">N. de Tarjeta:</label>
+            <input type="text" id="numero-habilitar-tarjeta" name="numero-habilitar-tarjeta" required>
+            <label for = "estado-tarjeta">Estado de la tarjeta</label>
+            <select id="estado-tarjeta" name="estado-tarjeta" required>
+                <option value="habilitada">Habilitada</option>
+                <option value="deshabilitada">Deshabilitada</option>
+            </select>
+            <button type="submit">Actualizar Estado</button>
+        </form>
+
+        </div>
+
+        <div id="form-consultar-tarjetas-habilitadas-deshabilitadas-container" class="form-container hidden">
+        <h2>Tarjetas Habilitadas/Deshabilitadas</h2>
+        <form id="form-consultar-tarjetas-habilitadas-deshabilitadas" form name="miformulario"  action="" method="GET">
+            
+            
+            <input type="button" name="button" value="Click" onClick="consultarTarjetaHabilitadaDeshabilitada()">
+            </form>
+        </form>
+        </div>
+
+
+        <div id="form-consultar-tarjetas-fecha-container" class="form-container hidden">
+            <h2>Tarjetas por fecha </h2>
+            <form id="form-consultar-tarjetas-fecha">
+                <label for="fecha-inicio">Fecha inicio:</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio" required>
+
+                <label for="fecha-fin">Fecha Fin:</label>
+                <input type="date" id="fecha-fin" name="fecha-fin" required>
+
+                <button type="submit">Consultar Tarjetas por fecha </button>
+            </form>
+        </div>
+
+        <div id="form-consultar-promedio-saldo-anterior-container" class="form-container hidden">
+            <h2>Promedio Saldos Anteriores</h2>
+            <form id="form-consultar-promedio-saldo-anterior">
+                
+                <button type="submit">Consultar Promedio Saldos Anteriores</button>
+            </form>
+        </div>
+
+        <div id="form-consultar-promedio-cargas-container" class="form-container hidden">
+            <h2>Promedio Cargas</h2>
+            <form id="form-consultar-promedio-cargas">
+                
+                <button type="submit">Consultar Promedio Cargas</button>
+            </form>
+        </div>
+
+        <div id="form-consultar-total-saldos-anteriores-container" class="form-container hidden">
+            <h2>Total Saldos Anteriores</h2>
+            <form id="form-consultar-total-saldos-anteriores">
+                
+                <button type="submit">Consultar Total Saldos Anteriores</button>
+            </form>
+        </div>
+
+        <div id="form-consultar-total-cargas-habilitadas-container" class="form-container hidden">
+            <h2>Total Cargas Habilitadas</h2>
+            <form id="form-consultar-total-cargas-habilitadas">
+                
+                 <button type="submit">Consultar Total Cargas Habilitadas</button>
+            </form>
+        </div>
+
+        <div id="form-consultar-total-cargas-deshabilitadas-container" class="form-container hidden">
+            <h2>Total Cargas Deshabilitadas</h2>
+            <form id="form-consultar-total-cargas-deshabilitadas">
+                
+                <button type="submit">Consultar Total Cargas Deshabilitadas</button>
+            </form>
+        </div>
+        </section>
+
+
+    </main>    
+
+
+
+    </div>
+    <footer>
+        <p>&copy; 2024 MaxPas. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
