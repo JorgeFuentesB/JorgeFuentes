@@ -63,8 +63,8 @@
                     <input type="number" id="saldo-anterior-registrar" name="saldo-anterior-registrar" required>
                     <label for="estado-registrar">Estado de la tarjeta: </label>
                     <select id="estado-registrar" name="estado-registrar" required>
-                        <option value="habilitada">Habilitada</option>
-                        <option value="deshabilitada">Deshabilitada</option>
+                        <option value=1>Habilitada</option>
+                        <option value=0>Deshabilitada</option>
                     </select>
                     <button type="submit">Registrar Tarjeta</button>
                 </form>
@@ -119,7 +119,7 @@
                 <label for="fecha-fin">Fecha Fin:</label>
                 <input type="date" id="fecha-fin" name="fecha-fin" required>
 
-                <button type="submit">Consultar Tarjetas por fecha </button>
+                <button onclick="consultarTarjetasFecha()">Consultar Tarjetas por fecha </button>
             </form>
         </div>
 
@@ -127,7 +127,7 @@
             <h2>Promedio Saldos Anteriores</h2>
             <form id="form-consultar-promedio-saldo-anterior">
                 
-                <button type="submit">Consultar Promedio Saldos Anteriores</button>
+                <button onclick="consultarSaldoAnterior()">Consultar Promedio Saldos Anteriores</button>
             </form>
         </div>
 
@@ -135,7 +135,7 @@
             <h2>Promedio Cargas</h2>
             <form id="form-consultar-promedio-cargas">
                 
-                <button type="submit">Consultar Promedio Cargas</button>
+                <button onclick="consultarMontoCargas()">Consultar Monto Cargas</button>
             </form>
         </div>
 
@@ -143,7 +143,7 @@
             <h2>Total Saldos Anteriores</h2>
             <form id="form-consultar-total-saldos-anteriores">
                 
-                <button type="submit">Consultar Total Saldos Anteriores</button>
+                <button onclick="consultarSaldoAnterior()">Consultar Total Saldos Anteriores</button>
             </form>
         </div>
 
@@ -151,7 +151,7 @@
             <h2>Total Cargas Habilitadas</h2>
             <form id="form-consultar-total-cargas-habilitadas">
                 
-                 <button type="submit">Consultar Total Cargas Habilitadas</button>
+                 <button onclick="montoCargasTarjetasHabilitadas()">Consultar Total Cargas Habilitadas</button>
             </form>
         </div>
 
@@ -159,7 +159,7 @@
             <h2>Total Cargas Deshabilitadas</h2>
             <form id="form-consultar-total-cargas-deshabilitadas">
                 
-                <button type="submit">Consultar Total Cargas Deshabilitadas</button>
+                <button onclick="montoCargasTarjetasDeshabilitadas()">Consultar Total Cargas Deshabilitadas</button>
             </form>
         </div>
         </section>
